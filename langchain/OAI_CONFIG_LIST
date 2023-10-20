@@ -1,0 +1,9 @@
+// Please modify the content, remove this comment and rename this file to OAI_CONFIG_LIST to run the sample code.
+[
+
+    {
+        "model": "gpt-3.5-turbo",
+        "api_key": "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"
+
+    }
+]
