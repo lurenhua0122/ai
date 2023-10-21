@@ -1,0 +1,58 @@
+exclude: ^(poetry.lock|.idea/)
+repos:
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: 4.0.1  # Adjust this to the latest version if needed
+    hooks:
+      - id: flake8
+        args: ["--max-line-length=120"]
+        exclude: ^pyht/protos
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-builtin-literals
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-shebang-scripts-are-executable
+      - id: check-merge-conflict
+      - id: check-json
+      - id: check-toml
+      - id: check-xml
+      - id: check-yaml
+      - id: debug-statements
+      - id: destroyed-symlinks
+      - id: detect-private-key
+      - id: end-of-file-fixer
+        exclude: ^LICENSE|\.(html|csv|txt|svg|py)$
+      - id: pretty-format-json
+        args: ["--autofix", "--no-ensure-ascii", "--no-sort-keys"]
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+        exclude: \.(html|svg|proto)$
+
+  - repo: https://github.com/fredrikaverpil/creosote.git
+    rev: v2.6.3
+    hooks:
+      - id: creosote
+        args:
+          - "--venv=.venv"
+          - "--paths=pyht"
+          - "--deps-file=pyproject.toml"
+          - "--sections=tool.poetry.dependencies"
+          - "--exclude-deps=rich"
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.5
+    hooks:
+      - id: codespell
+        exclude: ^pyht/protos
+
+  - repo: https://github.com/RobertCraigie/pyright-python
+    rev: v1.1.329
+    hooks:
+      - id: pyright
+        exclude: ^(pyht/protos|demo)/

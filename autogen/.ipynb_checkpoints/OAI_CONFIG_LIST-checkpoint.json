@@ -1,0 +1,6 @@
+config_list = [
+    {
+        'model': 'gpt-3.5-turbo',
+        'api_key': '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',
+    },
+]
