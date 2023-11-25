@@ -6,7 +6,7 @@ This demo depends on the following packages:
 numpy
 simpleaudio
 ```
-
+python demo/main.py --user v0WgV9ZTg8WxPwJ8fXMhLKqobpo2 --key 6048cbd03f4e4816aff77ff68aeeb812 --text "Hello from Play!"
 ## Usage
 
 ```
